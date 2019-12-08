@@ -12,7 +12,7 @@ import {
 import Loading from '../Loading';
 
 const ListMovie = ({ search, movies, history, isLoading }) => {
-  const [title, setTitle] = useState('batman');
+  const [title, setTitle] = useState('');
   const [year, setYear] = useState('');
   const [order, setOrder] = useState('4');
 
@@ -33,6 +33,14 @@ const ListMovie = ({ search, movies, history, isLoading }) => {
       if (x.imdbRating > y.imdbRating) return -1;
       if (x.imdbRating < y.imdbRating) return 1;
       return 0;
+    }
+  };
+
+  const getMovies = () => {
+    if (title !== '') {
+      search({ title, year });
+    } else {
+      alert('Campo titulo é obrigatório');
     }
   };
 
@@ -75,7 +83,7 @@ const ListMovie = ({ search, movies, history, isLoading }) => {
         <option value="3">Nota Media - Crescente</option>
         <option value="4">Nota Media - Decrescente</option>
       </Select>
-      <ButtonDefault onClick={() => search({ title, year })}>Pesquisar</ButtonDefault>
+      <ButtonDefault onClick={getMovies}>Pesquisar</ButtonDefault>
       {renderMovies()}
     </ContainerListMovie>
   );

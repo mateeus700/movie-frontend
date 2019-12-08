@@ -1,0 +1,9 @@
+--> Instruções
+    * unzip no projeto
+    * No terminal entrar na pasta do projeto e executar "yarn"
+    * Com isso rode yarn start para executar
+    * Para realizar os testes execute "yarn test:coverage"
+
+Agradeço a opotunidade e passando no processo ou não, caso tenham um tempo gostaria de um feedback sobre o codigo para me crescer como profissional.
+
+Obrigado.

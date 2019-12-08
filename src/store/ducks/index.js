@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
-// import AuthReducer from './auth';
+import MovieReducer from './movie';
 // import MessageReducer from './messages';
 
 const appReducer = history => {
   return combineReducers({
-    router: connectRouter(history)
-    // login: AuthReducer,
+    router: connectRouter(history),
+    movie: MovieReducer
     // message: MessageReducer
   });
 };
